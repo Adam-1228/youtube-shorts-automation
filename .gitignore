@@ -1,0 +1,40 @@
+# Environment variables
+.env
+
+# OAuth credentials (NEVER upload these!)
+client_secrets.json
+token.pickle
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output files
+outputs/
+assets/fonts/
+assets/backgrounds/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
