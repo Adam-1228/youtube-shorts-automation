@@ -1,0 +1,15 @@
+[Unit]
+Description=YouTube Shorts Automation Scheduler
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/youtube-shorts-automation
+ExecStart=/home/ubuntu/youtube-shorts-automation/venv/bin/python scheduler.py
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
