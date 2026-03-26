@@ -22,10 +22,12 @@ def get_authenticated_service():
             flow = InstalledAppFlow.from_client_secrets_file(
                 CLIENT_SECRETS_FILE, SCOPES
             )
-            try:
-                creds = flow.run_local_server(port=0)
-            except Exception:
-                creds = flow.run_console()
+                        creds = flow.run_local_server(
+                                            port=8080,
+                                            open_browser=False,
+                                            authorization_prompt_message='Please visit this URL to authorize: {url}',
+                                            success_message='Authorization complete. You may close this window.'
+                        )
 
         with open(TOKEN_FILE, 'wb') as token:
             pickle.dump(creds, token)
