@@ -28,13 +28,14 @@ env/
 *.swo
 
 # Output files
-outputs/
-assets/fonts/
-assets/backgrounds/
+outputs/*.mp4
+outputs/*.mp3
+outputs/*.json
 
 # OS files
 .DS_Store
 Thumbs.db
 
 # Logs
+logs/*.log
 *.log
