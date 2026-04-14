@@ -1,5 +1,18 @@
 """
 YouTube Shorts Automation System
+youtube-shorts-automation - 유튜브 쇼츠 자동 생성 및 업로드 시스템 (main.py)
+
+주요 흐름:
+    1. Gemini API로 쇼츠 스크립트(제목, 내용, 해시태그) 자동 생성
+    2. edge-tts(Microsoft TTS)로 한국어 음성 파일 생성
+    3. MoviePy로 자막 + 배경영상 + 음성을 합성하여 MP4 생성
+    4. YouTube Data API v3로 생성된 쇼츠를 자동 업로드
+
+의존성:
+    - google-generativeai: Gemini API 클라이언트
+    - moviepy==1.0.3: 영상 편집 (v2.x 비호환으로 버전 고정)
+    - edge-tts: Microsoft Azure TTS (무료)
+    - google-api-python-client: YouTube API 클라이언트
 - Gemini API for script generation
 - MoviePy + edge-tts for video creation
 - YouTube Data API v3 for auto upload
