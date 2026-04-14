@@ -1,3 +1,22 @@
+"""
+youtube-shorts-automation - 영상 제작 모듈 (video_maker/video_creator.py)
+---------------------------------------------------------------------------
+MoviePy를 사용하여 배경 영상, 자막, 음성을 합성하여 유튜브 쇼츠 MP4 파일을 생성하는 모듈.
+
+주요 기능:
+    - create_video(): 씬별 소스 파일들을 하나의 쇼츠 영상으로 합성
+    - 화면 비율: 9:16 세로 영상 (유튜브 쇼츠 표준)
+    - 자막(텍스트) 오버레이: 한국어 폰트 지원
+    - 음성 + 배경음악 믹싱
+
+의존성:
+    - moviepy==1.0.3: 영상 편집 (v2.x 비호환으로 1.0.3 고정)
+    - 시스템에 ffmpeg 설치 필요
+
+출력:
+    MP4 형식의 9:16 쇼츠 영상
+    해상도: 1080x1920 (Full HD 세로)
+"""
 import os
 from moviepy.editor import (
     TextClip, CompositeVideoClip, AudioFileClip,
