@@ -1,3 +1,20 @@
+"""
+youtube-shorts-automation - 유튜브 업로더 모듈 (uploader/youtube_uploader.py)
+------------------------------------------------------------------------------
+YouTube Data API v3를 사용하여 생성된 쇼츠 영상을 유튜브 채널에 자동 업로드하는 모듈.
+
+주요 기능:
+    - get_authenticated_service(): OAuth 2.0 인증으로 YouTube API 클라이언트 생성
+      * 인증 토큰은 token.pickle 파일에 캐시하여 재사용
+      * EC2 헤드리스 서버 환경에서도 동작하도록 설계
+    - upload_video(): 생성된 MP4 파일을 유튜브 채널에 업로드
+      * 제목, 설명, 태그, 카테고리, 개인정보 보호 설정 포함
+      * Shorts는 #Shorts 해시태그 포함 및 세로 영상으로 자동 인식
+
+인증:
+    OAuth 2.0 (client_secrets.json 파일 필요)
+    최초 실행 시 브라우저 인증 후 token.pickle로 저장.
+"""
 import os
 import pickle
 from google_auth_oauthlib.flow import InstalledAppFlow
