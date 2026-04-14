@@ -1,3 +1,19 @@
+"""
+youtube-shorts-automation - 스크립트 생성 모듈 (generator/script_generator.py)
+--------------------------------------------------------------------------------
+Gemini API를 사용하여 유튜브 쇼츠용 한국어 스크립트를 자동으로 생성하는 모듈.
+
+주요 기능:
+    - generate_script(): 주어진 주제로 쇼츠 스크립트 생성
+      * 제목, 나레이션 텍스트, 해시태그 포함
+      * 30-60초 분량의 간결한 내용으로 최적화
+    - 응답 형식: JSON (title, narration, hashtags)
+
+사용 모델:
+    Gemini 2.5 Flash (gemini-2.5-flash)
+    - 빠른 생성 속도
+    - 한국어 콘텐츠 최적화
+"""
 import google.generativeai as genai
 import json
 import re
